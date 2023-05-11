@@ -6,7 +6,7 @@
     Elenco Treni:
 </h1>
 
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         @foreach ($trains as $item)
         <div class="col-4 mb-1">
@@ -25,6 +25,33 @@
         </div>      
         @endforeach
     </div>
+</div> --}}
+
+<div class="container">
+    <table class="table  table-striped table-hover my-5">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Treno</th>
+                <th scope="col">Codice Treno</th>
+                <th scope="col">Da</th>
+                <th scope="col">A</th>
+                <th scope="col">Partenza</th>
+                <th scope="col">Arrivo Previsto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($trains as $item)
+                <tr>
+                    <td>{{$item->azienda}} - {{$item->tipo}} regionale</td>
+                    <td>{{$item->codice_treno}}</td>
+                    <td>{{$item->stazione_di_partenza}}</td>
+                    <td>{{$item->stazione_di_arrivo}}</td>
+                    <td>{{$item->orario_di_partenza}}</td>
+                    <td>{{$item->orario_di_arrivo}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 
 @endsection
