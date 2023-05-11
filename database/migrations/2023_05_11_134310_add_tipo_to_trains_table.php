@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->string('tipo'); //rg,rv,freccia,ecity,icity
+            $table->string('tipo')->nullable()->after('cancellato'); //rg,rv,freccia,ecity,icity
         });
     }
 
