@@ -19,12 +19,12 @@ class TrainsTableSeeder extends Seeder
     {
         for ($i = 1; $i <= 10; $i++) {
             DB::table('trains')->insert([
-                'azienda' => 'Company ' . $i,
-                'stazione_di_partenza' => 'Departure Station ' . $i,
-                'stazione_di_arrivo' => 'Arrival Station ' . $i,
+                'azienda' => $i,
+                'stazione_di_partenza' => $i,
+                'stazione_di_arrivo' => $i,
                 'orario_di_partenza' => Carbon::now()->addHours($i),
                 'orario_di_arrivo' => Carbon::now()->addHours($i + 2),
-                'codice_treno' => 'Code' . $i,
+                'codice_treno' => $i,
                 'numero_carrozze' => rand(8, 15),
                 'in_orario' => rand(0, 1) > 0.5,
                 'cancellato' => rand(0, 1) > 0.5,
