@@ -3,8 +3,11 @@
 
 @section('content')
 <h1>
-    Elenco Treni:
+    Elenco Trasporti:
 </h1>
+
+<a href="{{ route('home') }}">Home</a>
+<a href="{{ route('flights') }}">Flights</a>
 
 {{-- <div class="container">
     <div class="row">
@@ -53,5 +56,33 @@
         </tbody>
     </table>
 </div>
+
+<div class="container">
+    <table class="table  table-striped table-hover my-5">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Treno</th>
+                <th scope="col">Codice Treno</th>
+                <th scope="col">Da</th>
+                <th scope="col">A</th>
+                <th scope="col">Partenza</th>
+                <th scope="col">Arrivo Previsto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($flights as $item)
+                <tr>
+                    <td>{{$item->azienda}}</td>
+                    <td>{{$item->codice_treno}}</td>
+                    <td>{{$item->stazione_di_partenza}}</td>
+                    <td>{{$item->stazione_di_arrivo}}</td>
+                    <td>{{$item->orario_di_partenza}}</td>
+                    <td>{{$item->orario_di_arrivo}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
 
 @endsection
