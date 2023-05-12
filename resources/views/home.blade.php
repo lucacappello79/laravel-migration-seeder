@@ -42,7 +42,7 @@
         <tbody>
             @foreach($trains as $item)
                 <tr>
-                    <td>{{$item->azienda}} - {{$item->tipo}} regionale</td>
+                    <td>{{$item->azienda}} - {{$item->tipo}}</td>
                     <td>{{$item->codice_treno}}</td>
                     <td>{{$item->stazione_di_partenza}}</td>
                     <td>{{$item->stazione_di_arrivo}}</td>
