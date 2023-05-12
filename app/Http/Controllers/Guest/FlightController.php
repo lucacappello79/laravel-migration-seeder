@@ -15,6 +15,6 @@ class FlightController extends Controller
         $flights = Flight::all();
         $trains = Train::where('orario_di_partenza', '>=', now())->get();
 
-        return view('flights', compact('flights', 'trains'));
+        return view('home', compact('flights', 'trains'));
     }
 }
