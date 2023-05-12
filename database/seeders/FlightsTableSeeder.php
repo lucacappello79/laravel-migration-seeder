@@ -17,25 +17,20 @@ class FlightsTableSeeder extends Seeder
      */
     public function run()
     {
-        $aziende = ['TrenItalia', 'TreNord', 'OBB'];
-        $stazioniP = ['Verona', 'Trento', 'Bologna', 'Milano', 'Torino'];
-        $stazioniA = ['Roma', 'Firenze', 'Ancona', 'Napoli', 'Lecce'];
-        $tipo = ['Rg', 'Rv', 'Freccia', 'E-city', 'I-city'];
+        $aziende = ['Alitalia', 'AirFrance', 'AirDolomiti'];
+        $aeroportoP = ['Verona', 'Trento', 'Bologna', 'Milano', 'Torino'];
+        $aeroportoA = ['Roma', 'Firenze', 'Ancona', 'Napoli', 'Lecce'];
 
-        for ($i = -10; $i <= 30; $i++) {
+        for ($i = 0; $i <= 20; $i++) {
             DB::table('flights')->insert([
-                // 'azienda' => $i,
+
                 'azienda' => $aziende[array_rand($aziende)],
-                // 'stazione_di_partenza' => $i,
-                'stazione_di_partenza' => $stazioniP[array_rand($stazioniP)],
-                // 'stazione_di_arrivo' => $i,
-                'stazione_di_arrivo' => $stazioniA[array_rand($stazioniA)],
-                // 'orario_di_partenza' => Carbon::now()->addHours($i),
+                'aeroporto_di_partenza' => $aeroportoP[array_rand($aeroportoP)],
+                'aeroporto_di_arrivo' => $aeroportoA[array_rand($aeroportoA)],
                 'orario_di_partenza' => Carbon::now()->addMinutes(rand(-600, 600)),
-                // 'orario_di_arrivo' => Carbon::now()->addHours($i + 2),
                 'orario_di_arrivo' => Carbon::now()->addMinutes(rand(-600, 600))->addHours(rand(1, 3)),
-                'codice_treno' => $i,
-                'numero_carrozze' => rand(8, 15),
+                'codice_volo' => $i,
+                'numero_passeggeri' => rand(80, 150),
                 'in_orario' => rand(0, 1) > 0.5,
                 'cancellato' => rand(0, 1) > 0.5,
                 'created_at' => Carbon::now(),

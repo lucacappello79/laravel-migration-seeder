@@ -6,8 +6,8 @@
     Elenco Trasporti:
 </h1>
 
-<a href="{{ route('home') }}">Home</a>
-<a href="{{ route('flights') }}">Flights</a>
+{{-- <a href="{{ route('home') }}">Home</a>
+<a href="{{ route('flights') }}">Flights</a> --}}
 
 {{-- <div class="container">
     <div class="row">
@@ -58,11 +58,11 @@
 </div>
 
 <div class="container">
-    <table class="table  table-striped table-hover my-5">
+    <table class="table  table-striped table-hover table-info my-5">
         <thead class="table-dark">
             <tr>
-                <th scope="col">Treno</th>
-                <th scope="col">Codice Treno</th>
+                <th scope="col">Volo</th>
+                <th scope="col">Codice Volo</th>
                 <th scope="col">Da</th>
                 <th scope="col">A</th>
                 <th scope="col">Partenza</th>
@@ -73,9 +73,9 @@
             @foreach($flights as $item)
                 <tr>
                     <td>{{$item->azienda}}</td>
-                    <td>{{$item->codice_treno}}</td>
-                    <td>{{$item->stazione_di_partenza}}</td>
-                    <td>{{$item->stazione_di_arrivo}}</td>
+                    <td>{{$item->codice_volo}}</td>
+                    <td>{{$item->aeroporto_di_partenza}}</td>
+                    <td>{{$item->aeroporto_di_arrivo}}</td>
                     <td>{{$item->orario_di_partenza}}</td>
                     <td>{{$item->orario_di_arrivo}}</td>
                 </tr>

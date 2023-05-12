@@ -22,7 +22,7 @@ class TrainsTableSeeder extends Seeder
         $stazioniA = ['Roma', 'Firenze', 'Ancona', 'Napoli', 'Lecce'];
         $tipo = ['Rg', 'Rv', 'Freccia', 'E-city', 'I-city'];
 
-        for ($i = -10; $i <= 30; $i++) {
+        for ($i = -10; $i <= 20; $i++) {
             DB::table('trains')->insert([
                 // 'azienda' => $i,
                 'azienda' => $aziende[array_rand($aziende)],
