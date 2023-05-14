@@ -84,5 +84,32 @@
     </table>
 </div>
 
+<div class="container">
+    <table class="table  table-striped table-hover table-info my-5">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Età</th>
+                <th scope="col">Nato/a</th>
+                <th scope="col">Codice cliente</th>
+                <th scope="col">Iscritto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($customers as $item)
+                <tr>
+                    <td>{{$item->nome}}</td>
+                    <td>{{$item->cognome}}</td>
+                    <td>{{$item->eta}}</td>
+                    <td>{{$item->data_di_nascita}}</td>
+                    <td>{{$item->codice_cliente}}</td>
+                    <td>{{$item->iscritto}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
 
 @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\CustomerController;
 use App\Http\Controllers\Guest\FlightController;
 use App\Http\Controllers\Guest\Pagecontroller;
 use Illuminate\Support\Facades\Route;
@@ -16,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('/flights', [FlightController::class, 'index'])->name('flights');
+
+// Route::get('/', [FlightController::class, 'index'])->name('flights');
+// Route::get('/', [CustomerController::class, 'index'])->name('customers');
